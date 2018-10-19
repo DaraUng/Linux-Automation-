@@ -1,0 +1,11 @@
+export EDITOR=vim - to edit the file when bashe emas commmand not found.
+
+ctrl x+e
+
+# find a user in /etc/passwd take input for search
+
+if [$value -eq 1 ]; then
+	echo "I found $1"
+else
+	echo "I didn't find $1"
+if
