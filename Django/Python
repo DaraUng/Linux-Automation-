@@ -1,0 +1,45 @@
+#bin/bash
+import os
+
+#install python
+yum install python -pip
+
+#install virtualenv with pip & upgrade
+pip insall virtualenv
+pip install --upgrade pip
+
+#create directory & copy directory
+mkdir /opt/django
+cd /opt/django
+
+#install python36
+yum install python36
+virtualenv -p python36 django
+
+#source
+source django/bin/activate
+
+#install django
+pip install gjango
+
+#create admin project1
+django0admin startporject project1
+
+#create user in django project
+chown -R daraung65 django
+chown -R daraung65 project1
+
+#start the django test
+source /opt/django/django/bon/active
+/opt/django/project1/manage.py runserver 0.0.0.0:8000&
+
+#make fire wall rule in google cloud.
+#On ip address remove "s" and add 0.0.0.0:8000& at the end
+#: view networking detail. firewall rull . create fire fall. source iprages 0.0.0.0/0 . tcp 8000
+#Allow ip
+grep iR ALLOWED /opt/django/project1
+vim /opt/django/project1/project1/settings.py
+# allow ip '35.231.174.155'
+
+sudo -u daraung65 sh -c"source /opt/django/django/bin/activate && python manage.py runserver 0.0.0.0:800&
+
