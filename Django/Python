@@ -20,10 +20,10 @@ virtualenv -p python36 django
 source django/bin/activate
 
 #install django
-pip install gjango
+pip install django
 
 #create admin project1
-django0admin startporject project1
+djangoadmin startporject project1
 
 #create user in django project
 chown -R daraung65 django
