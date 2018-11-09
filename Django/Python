@@ -2,7 +2,7 @@
 import os
 
 #install python
-yum install python -pip
+yum -y install python -pip
 
 #install virtualenv with pip & upgrade
 pip insall virtualenv
