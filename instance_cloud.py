@@ -86,9 +86,10 @@ def create_instance(compute, project, zone, name):
                 # instance upon startup.
                 'key': 'startup-script',
                 'value': startup_script
- 
             }]
- }
+         }
+    }
+    
     return compute.instances().insert(
         project=project,
         zone=zone,
