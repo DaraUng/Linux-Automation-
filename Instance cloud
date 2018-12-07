@@ -22,17 +22,16 @@ def list_instances(compute, project, zone):
 
 def create_instance(compute, project, zone, name):
     # Get the latest Debian Jessie image.
-    image_response = compute.images().getFromFamily(
-        project='centos-cloud', family='centos-7').execute()
-    source_disk_image = image_response['selfLink']
 
     # Configure the machine
+    startup_script = open('Django/python_django.py', 'r').read()
+    image_response = compute.images().getFromFamily(project='centos-cloud', family='centos-7').execute()
+    
+    source_disk_image = image_response['selfLink']
     machine_type = "zones/%s/machineTypes/f1-micro" % zone
-    startup_script = open(
-        os.path.join(
-            os.path.dirname(__file__), 'startup_script.sh'), 'r').read()
-    image_url = "http://storage.googleapis.com/gce-demo-input/photo.jpg"
-    image_caption = "Ready for dessert?"
+    
+    #image_url = "http://storage.googleapis.com/gce-demo-input/photo.jpg"
+    #image_caption = "Ready for dessert?"
 
     config = {
         'name': name,
