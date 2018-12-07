@@ -66,7 +66,12 @@ def create_instance(compute, project, zone, name):
                 'https://www.googleapis.com/auth/logging.write'
             ]
         }],
-
+        
+        #enable the https/http to run on the instance
+        "labes":{
+            "http-server":"",
+            "https-server":""
+        }
         # Metadata is readable from the instance and allows you to
         # pass configuration from deployment scripts to instances.
         'metadata': {
